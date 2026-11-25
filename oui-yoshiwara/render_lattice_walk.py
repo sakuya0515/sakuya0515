@@ -18,7 +18,8 @@ PARALLAX = 3.0         # bars move this many times faster than the room
 BAR_PERIOD = 240       # px between bars (output px)
 BAR_WIDTH = 92
 BEAM_TOP = 70          # horizontal beam at the top
-SILL_Y = 930           # sill at the bottom
+SILL_Y = 1000          # sill at the bottom
+Y_BIAS = 60            # show a little more of the lower part (lanterns)
 FG_BLUR = 4            # foreground slightly out of focus
 BAR_RGB = np.array([30, 22, 16], np.float32)
 
@@ -30,7 +31,7 @@ R = np.asarray(room).astype(np.float32)
 RH, RW = R.shape[:2]
 bg_travel = RW - W
 fg_travel = bg_travel * PARALLAX
-y_off = (RH - H) // 2
+y_off = min(RH - H, (RH - H) // 2 + Y_BIAS)
 
 rng = np.random.default_rng(7)
 # lattice strip, wide enough for the whole travel; drawn once
