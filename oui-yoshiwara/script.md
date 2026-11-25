@@ -20,7 +20,7 @@
 
 | # | 秒 | 映っているもの | カメラ | 被写体の動き | 音 | 文字の余白 |
 |---|---|---|---|---|---|---|
-| 1 | 0:00–0:06 | 夜の部屋。床に広げた白い紙の前で、筆を持ったまま動かない応為。左にろうそく1本。斜め45度、少し上から | slow push-in | 筆先がわずかに揺れる → 視線を紙から上げる | ろうそくの小さな音、静けさ | 右側の暗がり |
+| 1 | 0:00–0:06 | 夜の部屋。床に広げた白い紙の前で、筆を持ったまま動かない応為。左にろうそく1本。斜め45度、少し上から | slow push-in | 筆先がわずかに揺れる → 視線を紙から上げる | ろうそくの小さな音、静けさ | 右側の紙の余白 |
 | 2 | 0:06–0:12 | 筆を持つ右手のクローズアップ。筆先は紙に触れていない。炎の照り返しが指に | slow truck left | 筆先を紙から離す → 筆を硯の縁にそっと置く | 筆を置く小さな音 | 上部の暗がり |
 | 3 | 0:12–0:18 | 夜の吉原の通り。張見世の格子の前に立つ応為の後ろ姿（少し引き）。格子のすき間から暖色の灯りが漏れ、彼女の輪郭を縁取る。奥に遊女たちの姿がぼんやり | slow push-in | 彼女は動かない。髪の毛先だけが夜風で揺れる | 遠くの三味線、通りのざわめき | 上部の屋根・夜空 |
 | 4 | 0:18–0:24 | 格子越しの張見世の中。座って客を待つ遊女3人。顔ははっきり、丁寧に美しく描かれている（応為に見えているもの） | slow pan right | 遊女たちがわずかに視線を動かす → 一人が髪に手をやる | 三味線 | 格子の縦線のあいだ |
@@ -61,16 +61,24 @@
 
 生成する画像：12枚（1〜9、10a、10b、11）
 
-## 画像プロンプト：カット1（16:9）
-
-画像1を添付して使う。
+## 画風の固定ブロック（全カット共通。毎回そのまま入れる）
 
 ```
-Use the attached image as the character and style reference. Keep exactly the same face, eyes, and messy loose hair, the same kimono with the dark collar, and the same charcoal and pencil sketch style on warm cream textured paper, in sepia monochrome.
+Style: a rough, unfinished charcoal and graphite sketch on warm cream watercolor paper, in sepia monochrome. Loose, sparse strokes. Hair drawn as a few flowing lines. Soft smudged shading. Large areas of untouched paper; the drawing fades into blank paper toward the edges. The background is only suggested with a few strokes. Small white specks scattered like light. Not manga, not anime, no clean line art.
+```
 
-Scene: the same young woman, a painter in the Edo period, kneels on a wooden floor at night and leans over a large sheet of blank white paper. She holds a thin brush upright in her right hand, its tip just above the paper, not yet painting. Her gaze is fixed on the empty paper. Three-quarter view, both eyes visible. Medium shot from slightly above. She is placed in the left two thirds of the frame; the right third is dark and empty.
+## 画像プロンプト：カット1（16:9）v2
 
-A single candle stands to her left. Its small flame is the only color in the image: a soft warm amber glow that lights the left side of her face and her hands. Everything else stays monochrome charcoal, with loose unfinished strokes that fade into the paper at the edges.
+画像1を添付して使う。v1から、部屋の説明を減らし、画風の固定ブロックを入れた。
+
+```
+Use the attached image as the reference for both the woman and the drawing style. Keep the same face, eyes, messy loose hair, and the same kimono with the dark collar.
+
+Style: a rough, unfinished charcoal and graphite sketch on warm cream watercolor paper, in sepia monochrome. Loose, sparse strokes. Hair drawn as a few flowing lines. Soft smudged shading. Large areas of untouched paper; the drawing fades into blank paper toward the edges. The background is only suggested with a few strokes. Small white specks scattered like light. Not manga, not anime, no clean line art.
+
+Scene: at night, she kneels and leans over a blank sheet of paper on the floor. She holds a thin brush upright in her right hand, its tip just above the paper, not yet painting. Three-quarter view, both eyes visible, her gaze on the paper. Medium shot from slightly above. She sits in the left two thirds of the frame; the right third is left as blank paper.
+
+Light: a single candle to her left. Its small flame and the soft amber glow on the left side of her face and hands are the only color. Everything else stays sepia.
 
 Horizontal 16:9.
 ```
@@ -80,5 +88,5 @@ Horizontal 16:9.
 1. 顔が画像1と同じ人に見えるか
 2. 筆を持つ指の本数と形
 3. 炎とその照り返し以外に色が広がっていないか
-4. 素描のタッチが写実やアニメ調に変わっていないか
-5. 右側の暗い余白が残っているか（歌詞を置く場所）
+4. 素描のタッチが写実やアニメ調に変わっていないか。特に目（輪郭線が濃くなる、目が大きくなる、ハイライトが入る）と、描き込みの量（背景が埋まっていないか）
+5. 右側の余白が残っているか（歌詞を置く場所）
