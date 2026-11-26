@@ -112,3 +112,14 @@ Horizontal 16:9.
 - S2b（格子越しに歩きながら見る）の部屋の画像：**room_v3_stripes_seedream.png（Seedream、松の柄のない絵）** を採用。試作は lattice_walk_test_v3_stripes_seedream.mp4
 - 松の柄の絵（Nano Banana 2）と、その色調を整えた版（*_unused）は不採用
 - ここまでの傾向（各1回の結果）：Seedream は、一から作る場合も編集する場合も画像1の画風を保てた。Nano Banana 2 は編集で線画寄りに変わった
+
+## できている素材（clips/、文字なし・音なし・16:9）
+
+| カット | ファイル | 長さ | 内容 |
+|---|---|---|---|
+| S2b | S2b_lattice_walk.mp4 | 8秒 | 格子越しに歩きながら見る（Seedreamの部屋の画像） |
+| P1 | P1_lattice.mp4 | 8秒 | 絵の格子と黒い人影。右から左へ。格子の中の明かりが強まる |
+| P2 | P2_lantern.mp4 | 8秒 | 禿の提灯を画面中央下に置き、ゆっくり寄る（S5の炎と同じ位置） |
+| P3 | P3_reveal.mp4 | 14秒 | 暗闇。禿の提灯（中央）→左の提灯→右の提灯の順に灯る → 格子の明かり → 絵の全体へ引く |
+
+P1〜P3は横700pxのサンプル画像から作っている。高解像度の画像に差し替えれば render_painting_clips.py で作り直せる。
