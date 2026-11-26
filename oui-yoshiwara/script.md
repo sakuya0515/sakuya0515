@@ -104,3 +104,8 @@ Horizontal 16:9.
 | 2026-11-25 | Lovart / Seedream 5.5 | 画像1 | room_v2：素描調、紙を残す、灯りだけ暖色、横一列で通り向き。画風は合格。目がややマンガ寄り。衣装が花魁らしくない（Kyokoさん） |
 | 2026-11-26 | Lovart / Seedream 5.5（指定） | room_v2 を編集 | room_v3a：衣装が大柄に（松と鶴、波と菊、太縞、菖蒲と龍）。花魁らしさは上がったが、くっきりした線画寄りになり、木炭のぼかしが減った |
 | 2026-11-26 | Lovart / モデル自動（実際は Nano Banana 2） | room_v2 を編集 | room_v3b：木炭のぼかしとセピアの調子を保ったまま、縞・波の柄と前の大きな帯が入った。花魁らしさは中くらい |
+
+## 決定事項
+
+- S2b（格子越しに歩きながら見る）の部屋の画像：**room_v3b_auto.png（Nano Banana 2、松の柄のない絵）** を採用。試作は lattice_walk_test_v3b_auto.mp4
+- room_v3a（Seedream、松の柄の絵）と、その色調を整えた版（room_v3a_graded.png ほか）は不採用。Claudeが採用画像を取り違えて作ったもの
