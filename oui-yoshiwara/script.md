@@ -175,3 +175,4 @@ Kyokoさんの好み（確認済み）：顔は美しく丁寧に。描き込み
 - 花飾りは応為には不要（Kyokoさん）。カット1の花飾りが参照画像を通じてS3にも小さく残った
 - 編集で除去：cut1_chatgpt_noflower.png、s3_chatgpt_clean.png（周りの髪の線を写して覆う。remove_spot.py）
 - 以降の応為のカットでは、参照画像として cut1_chatgpt_noflower.png を添付する
+- S3：ChatGPT（s3_chatgpt_clean.png）に、格子の縦縞の影を編集で重ねる（lattice_shadow.py → s3_chatgpt_clean_stripes.png。動画では縞をゆっくり横に流す）。視線は格子を見ていないが、このまま使う＝「見たものを考えている」表情として（Kyokoさん、B案）
