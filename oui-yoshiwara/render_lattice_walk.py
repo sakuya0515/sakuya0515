@@ -23,12 +23,32 @@ Y_BIAS = 60            # show a little more of the lower part (lanterns)
 FG_BLUR = 4            # foreground slightly out of focus
 BAR_RGB = np.array([30, 22, 16], np.float32)
 
-room = Image.open(SRC).convert('RGB')
-rw, rh = room.size
+IS_VIDEO = SRC.lower().endswith(('.mp4', '.mov', '.webm', '.mkv'))
+if IS_VIDEO:
+    # moving room: the people move (generated video, locked camera); we still slide it ourselves
+    probe = subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height:format=duration',
+                            '-of', 'default=nw=1:nk=1', SRC], capture_output=True, text=True).stdout.split()
+    rw, rh, vdur = int(probe[0]), int(probe[1]), float(probe[2])
+    DUR = min(DUR, vdur)
+else:
+    room0 = Image.open(SRC).convert('RGB')
+    rw, rh = room0.size
 s = max(W * BG_SCALE / rw, H * BG_SCALE / rh)
-room = room.resize((int(rw * s), int(rh * s)), Image.LANCZOS)
-R = np.asarray(room).astype(np.float32)
-RH, RW = R.shape[:2]
+RW, RH = int(rw * s) // 2 * 2, int(rh * s) // 2 * 2
+if IS_VIDEO:
+    vid = subprocess.Popen(['ffmpeg', '-loglevel', 'error', '-i', SRC, '-vf', f'fps={FPS},scale={RW}:{RH}:flags=lanczos',
+                            '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-'], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
+    def room_frame(i):
+        buf = vid.stdout.read(RW * RH * 3)
+        if len(buf) < RW * RH * 3:
+            return room_frame.last
+        room_frame.last = np.frombuffer(buf, np.uint8).reshape(RH, RW, 3).astype(np.float32)
+        return room_frame.last
+    room_frame.last = np.zeros((RH, RW, 3), np.float32)
+else:
+    R0 = np.asarray(room0.resize((RW, RH), Image.LANCZOS)).astype(np.float32)
+    def room_frame(i):
+        return R0
 bg_travel = RW - W
 fg_travel = bg_travel * PARALLAX
 y_off = min(RH - H, (RH - H) // 2 + Y_BIAS)
@@ -63,6 +83,7 @@ def ease(u):
     return (u - a / 2) / (1 - a)
 
 def frame(t):
+    R = room_frame(int(round(t * FPS)))
     k = ease(t / DUR)
     bx = int(round(k * bg_travel))
     fx = int(round(k * fg_travel))
@@ -87,4 +108,6 @@ p = subprocess.Popen(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-
 for i in range(int(DUR * FPS)):
     p.stdin.write(frame(i / FPS).tobytes())
 p.stdin.close(); p.wait()
+if IS_VIDEO:
+    vid.kill()
 print('done')
