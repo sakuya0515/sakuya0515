@@ -148,3 +148,14 @@ P1〜P3は横700pxのサンプル画像から作っている。高解像度の�
 ```
 Same woman, same face, same drawing style and same kimono as the attached image. Her hair is loosely tied up with many stray strands, with no flowers and no hair ornaments.
 ```
+
+## 画風の固定ブロック v2（応為のカット用。v1から差し替え）
+
+Kyokoさんの評価（2026-11-26）：Nano Banana 2 のカット1は「顔が美しくない、描き込みが少ない、全体に雑」。
+v1の固定ブロックが「rough, unfinished, sparse」を強く言いすぎていた。画像1は、顔は丁寧に描き込まれ、崩れているのは髪の先と着物の端だけ。描き込みは顔に集め、外へ行くほどほどけていく。
+
+```
+Style: a delicate charcoal and graphite drawing on warm cream paper, in sepia monochrome, like the attached image. Her face is drawn with care and beauty: fine, soft shading around the eyes, nose and lips. The detail is concentrated on her face and hands; toward the edges, her hair strands and kimono loosen into free strokes and fade into the paper. Small white specks scattered like light. Not manga, not anime, not watercolor.
+```
+
+Kyokoさんの好み（確認済み）：顔は美しく丁寧に。描き込みが少なすぎる・雑なのは好まない。描き込みすぎてマンガ的になるのも避けたい（最初の懸念）。
