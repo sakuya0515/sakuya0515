@@ -95,3 +95,10 @@ Scene: the inside of a lantern-lit room in the Edo period pleasure quarter, seen
 
 Horizontal 16:9.
 ```
+
+## 検証メモ（Kyokoさんの生成結果）
+
+| 日付 | ツール | 参照画像 | 結果 |
+|---|---|---|---|
+| 2026-11-25 | 不明 | 不明 | room_v1：水彩・墨の完成イラスト調。全体が琥珀色。2人ずつ向かい合う配置で張見世にならず。応為の顔は写らなかった |
+| 2026-11-25 | Lovart / Seedream 5.5 | 画像1 | room_v2：素描調、紙を残す、灯りだけ暖色、横一列で通り向き。画風は合格。目がややマンガ寄り。衣装が花魁らしくない（Kyokoさん） |
