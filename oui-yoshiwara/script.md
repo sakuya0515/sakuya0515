@@ -139,3 +139,12 @@ P1〜P3は横700pxのサンプル画像から作っている。高解像度の�
 |---|---|---|---|
 | 2026-11-26 | Lovart / Kling（10秒、1080p、24fps） | room_v3_stripes_seedream | カメラは止まっていた（フレーム間の位置ずれを計測、ほぼゼロ）。4人がそれぞれ別のタイミングで動いた。顔は保たれた。人物の体が時間とともにわずかに小さく・下がって見える。右端の人の手が途中で手を振るような形になる。合成：lattice_walk_motion_kling.mp4 |
 | 2026-11-26 | Lovart / MiniMax H3（10秒、2560×1440、24fps）※Seedanceを選べず代わりに | room_v3_stripes_seedream | カメラは止まっていた。動きはKlingより小さく控えめ。扇は胸の前で開く。右端の手はゆっくり下りる。顔は目が大きく見開いた人形寄りになり、表情の幅はKlingより狭い。体がわずかに小さく・下がるのはKlingと同じ。合成：lattice_walk_motion_minimax.mp4 |
+
+## 応為の人物の固定（全カット共通。毎回入れる）
+
+カット1は ChatGPT 版（cut1_chatgpt.png）を採用。髪の花飾りは不要（Kyokoさん、2026-11-26）。
+画像1の髪の左上にある濃いかたまりを、AIが花飾りとして描くことがあるため、毎回明記する。
+
+```
+Same woman, same face, same drawing style and same kimono as the attached image. Her hair is loosely tied up with many stray strands, with no flowers and no hair ornaments.
+```
