@@ -169,3 +169,9 @@ Kyokoさんの好み（確認済み）：顔は美しく丁寧に。描き込み
 - カット1（S1）：ChatGPT（cut1_chatgpt.png）。髪の花飾りを消す手直しをする
 - S2：ChatGPT（s2_chatgpt.png）。理由（Kyokoさん）：ChatGPTのキャラのほうが見た目も応為のイメージに近い
 - 応為のカットは ChatGPT の同じチャットで作る
+
+## 花飾りの除去（2026-11-26）
+
+- 花飾りは応為には不要（Kyokoさん）。カット1の花飾りが参照画像を通じてS3にも小さく残った
+- 編集で除去：cut1_chatgpt_noflower.png、s3_chatgpt_clean.png（周りの髪の線を写して覆う。remove_spot.py）
+- 以降の応為のカットでは、参照画像として cut1_chatgpt_noflower.png を添付する
