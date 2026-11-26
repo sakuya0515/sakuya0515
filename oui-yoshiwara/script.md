@@ -162,3 +162,9 @@ Style: a delicate charcoal and graphite drawing on warm cream paper, in sepia mo
 ```
 
 Kyokoさんの好み（確認済み）：顔は美しく丁寧に。描き込みが少なすぎる・雑なのは好まない。描き込みすぎてマンガ的になるのも避けたい（最初の懸念）。
+
+## 決定事項（応為のカット）
+
+- カット1（S1）：ChatGPT（cut1_chatgpt.png）。髪の花飾りを消す手直しをする
+- S2：ChatGPT（s2_chatgpt.png）。理由（Kyokoさん）：ChatGPTのキャラのほうが見た目も応為のイメージに近い
+- 応為のカットは ChatGPT の同じチャットで作る
