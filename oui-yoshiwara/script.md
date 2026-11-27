@@ -176,3 +176,11 @@ Kyokoさんの好み（確認済み）：顔は美しく丁寧に。描き込み
 - 編集で除去：cut1_chatgpt_noflower.png、s3_chatgpt_clean.png（周りの髪の線を写して覆う。remove_spot.py）
 - 以降の応為のカットでは、参照画像として cut1_chatgpt_noflower.png を添付する
 - S3：ChatGPT（s3_chatgpt_clean.png）に、格子の縦縞の影を編集で重ねる（lattice_shadow.py → s3_chatgpt_clean_stripes.png。動画では縞をゆっくり横に流す）。視線は格子を見ていないが、このまま使う＝「見たものを考えている」表情として（Kyokoさん、B案）
+
+## S4・S5の見直し（2026-11-27）
+
+- S4 v1（s4_chatgpt_v1_rejected.png）は不採用。指が全部開き、すき間ごとに炎が見えて汚い（Kyokoさん）。原因はプロンプトの「flame seen through the gaps between her fingers」
+- Kyokoさん：かざす手の指はそろえる。映画では、そろえた指の手のひらを、ろうそくの手前と向こう側の両方に置き、光の当たり方、肌への移り方、透け方をじっくり研究していた
+- これに合わせて二つに分ける
+  - S4：手のひらを炎の向こう側に置く（炎が手前）。光が肌に当たり、移っていく
+  - S5：手のひらを炎の手前に置く（炎が奥）。指の縁が透けて赤く光り、その奥に見つめる顔。炎は画面中央下（P2の提灯とつなぐ）
